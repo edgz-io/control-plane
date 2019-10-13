@@ -1,7 +1,7 @@
 # Control Plane Setup
 This is a basic set of steps for getting openfaas running with istio service mesh.
 
-## Local Setup 
+## Local Setup
 
 ### Install minikube & setup hypervisor
 1. `brew install kubectl`
