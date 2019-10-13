@@ -23,6 +23,7 @@ This is a basic set of steps for getting openfaas running with istio service mes
 1. `helm template install/kubernetes/helm/istio-init --name istio-init --namespace istio-system | kubectl apply -f -`
 1. Re-run until 23 is hit (all CRDs installed) `kubectl get crds | grep 'istio.io' | wc -l`
 1. Verify running `kubectl get pods -n istio-system`
+1. Enable automatic sidecar injection - `kubectl label namespace default istio-injection=enabled --overwrite`
 
 ### Install OpenFaaS for Serverless Capabilities
 Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/README.md
