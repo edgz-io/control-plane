@@ -51,3 +51,36 @@ Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/REA
 1. `helm repo add presslabs https://presslabs.github.io/charts`
 1. `helm install presslabs/mysql-operator --name mysql-operator`
 
+
+## Add a test function to openfaas
+`http://127.0.0.1:31112/ui/`
+
+## Add MySQL Cluster
+```
+Cluster.yaml
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: test-secret
+type: Opaque
+data:
+  ROOT_PASSWORD: bm90LXNvLXNlY3VyZQ==
+  # USER: <your app user base64 encoded>
+  # PASSWORD: <your app password base64 encoded>
+  # DATABASE: <your app database base64 encoded>
+
+apiVersion: mysql.presslabs.org/v1alpha1
+kind: MysqlCluster
+metadata:
+  name: test
+spec:
+  replicas: 1
+  secretName: test-secret
+ ```
+ 
+ ```
+ $ kubectl apply -f cluster.yaml
+secret/test-secret created
+mysqlcluster.mysql.presslabs.org/test created
+```
