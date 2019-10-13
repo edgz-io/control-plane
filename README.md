@@ -51,6 +51,14 @@ Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/REA
 1. `helm repo add presslabs https://presslabs.github.io/charts`
 1. `helm install presslabs/mysql-operator --name mysql-operator`
 
+## Explore Service Mesh
+`istioctl dashboard kiali`
+
+## Explore Metrics
+`istioctl dashboard grafana`
+
+## Explore Traces
+`istioctl dashboard jaeger`
 
 ## Add a test function to openfaas
 `http://127.0.0.1:31112/ui/`
