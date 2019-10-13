@@ -1,5 +1,9 @@
 # Control Plane Setup
-This is a basic set of steps for getting openfaas running with istio service mesh.
+After running the below steps you will have:
+1. Local kubernetes running
+1. Istio CP w/ service mesh
+1. UIs: Kiali (mesh visualizer), Jaeger (trace exploration & comparisons), Grafana (metrics)
+1. OpenFaaS installed with one namespace for platform and second for functions, each function in service mesh (also OpenFaaS UI)
 
 ## Local Setup
 
