@@ -30,6 +30,9 @@ After running the below steps you will have:
 1. Verify running `kubectl get pods -n istio-system`
 1. Enable automatic sidecar injection - `kubectl label namespace default istio-injection=enabled --overwrite`
 1. `helm template install/kubernetes/helm/istio --name istio --namespace istio-system --values install/kubernetes/helm/istio/values-istio-demo.yaml | kubectl apply -f -`
+
+Check that all containers running are "ready" before moving on.  There will be 3 in `completed` state which is expected. 
+`ubectl get pods -n istio-system`
     
 ### Install OpenFaaS for Serverless Capabilities
 Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/README.md
