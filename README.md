@@ -46,3 +46,8 @@ Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/REA
 1. `export OPENFAAS_URL=http://127.0.0.1:31112`
 1. `echo -n $PASSWORD | faas-cli login -g $OPENFAAS_URL -u admin --password-stdin`
 1. `faas-cli version`
+
+### Install MySQL Cluster
+1. `helm repo add presslabs https://presslabs.github.io/charts`
+1. `helm install presslabs/mysql-operator --name mysql-operator`
+
