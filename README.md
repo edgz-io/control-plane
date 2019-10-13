@@ -5,6 +5,11 @@ After running the below steps you will have:
 1. UIs: Kiali (mesh visualizer), Jaeger (trace exploration & comparisons), Grafana (metrics)
 1. OpenFaaS installed with one namespace for platform and second for functions, each function in service mesh (also OpenFaaS UI)
 
+#### TODO
+- [ ] Fully script local
+- [ ] Full helm chart for all in one production
+- [ ] Move in service for schemaless
+
 ## Local Setup
 
 ### Install minikube & setup hypervisor
