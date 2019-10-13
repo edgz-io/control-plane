@@ -25,6 +25,7 @@ After running the below steps you will have:
 1. `kubectl create namespace istio-system`
 1. `kubectl --namespace kube-system create sa tiller`
 1. `kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller`
+1. `helm init --service-account tiller --override spec.selector.matchLabels.'name'='tiller',spec.selector.matchLabels.'app'='helm' --output yaml | sed 's@apiVersion: extensions/v1beta1@apiVersion: apps/v1@' | kubectl apply -f -`
 1. `helm template install/kubernetes/helm/istio-init --name istio-init --namespace istio-system | kubectl apply -f -`
 1. Re-run until 23 is hit (all CRDs installed) `kubectl get crds | grep 'istio.io' | wc -l`
 1. Verify running `kubectl get pods -n istio-system`
