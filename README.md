@@ -40,7 +40,7 @@ Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/REA
 1. `kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml`
 1. `helm repo add openfaas https://openfaas.github.io/faas-netes/`
 1. `PASSWORD=$(head -c 12 /dev/urandom | shasum| cut -d' ' -f1)`
-1. `kubectl -n openfaas create secret generic basic-auth --from-literal=basic-auth-user=admin --from-literal=basic-auth-password="$PASSWORD`
+1. `kubectl -n openfaas create secret generic basic-auth --from-literal=basic-auth-user=admin --from-literal=basic-auth-password="$PASSWORD"`
 1. `helm repo update && helm upgrade openfaas --install openfaas/openfaas --set ingress.enabled=true --set serviceType=LoadBalancer --namespace openfaas --set basic_auth=true --set functionNamespace=openfaas-fn`
 1. `export OPENFAAS_URL=http://127.0.0.1:31112`
 1. `echo -n $PASSWORD | faas-cli login -g $OPENFAAS_URL -u admin --password-stdin`
