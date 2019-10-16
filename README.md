@@ -23,6 +23,7 @@ After running the below steps you will have:
 1. Startup minikube - `minikube start`
 1. Launch kubernetes dashboard `minikube dashboard`
 
+
 ### Install Istio w/ Tiller
 1. `curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.3.2 sh -`
 1. `cd istio-1.3.2`
@@ -40,6 +41,7 @@ After running the below steps you will have:
 Check that all containers running are "ready" before moving on.  There will be 3 in `completed` state which is expected. 
 `ubectl get pods -n istio-system`
     
+
 ### Install OpenFaaS for Serverless Capabilities
 Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/README.md
 1. `brew install faas-cli`
@@ -52,15 +54,19 @@ Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/REA
 1. `echo -n $PASSWORD | faas-cli login -g $OPENFAAS_URL -u admin --password-stdin`
 1. `faas-cli version`
 
+
 ### Install MySQL Cluster
 1. `helm repo add presslabs https://presslabs.github.io/charts`
 1. `helm install presslabs/mysql-operator --name mysql-operator`
 
+
 ### Load Backplane Service
 https://github.com/edgz-io/edgz-backend (in progress)
 
+
 ### Baseline Functions (core functions to be installed in OpenFaaS)
 ...
+
 
 ## Explore Service Mesh
 `istioctl dashboard kiali`
