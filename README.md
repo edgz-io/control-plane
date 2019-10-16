@@ -5,6 +5,12 @@ After running the below steps you will have:
 1. UIs: Kiali (mesh visualizer), Jaeger (trace exploration & comparisons), Grafana (metrics)
 1. OpenFaaS installed with one namespace for platform and second for functions, each function in service mesh (also OpenFaaS UI)
 
+## Core System Design
+1. Control Plane limited to Kubernetes, Istio, OpenFaaS (openfaas namespace), and Backplane (edgz-backend repo, edgz namespace)
+1. Platform - Instances of preset functions running in edgz-api namespace
+1. Asset server (minio.io, minio namespace)
+1. All other namespaces - relagated to functions in OpenFaaS + Assets
+
 #### TODO
 - [ ] Fully script local
 - [ ] Full helm chart for all in one production
