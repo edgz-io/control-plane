@@ -56,6 +56,12 @@ Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/REA
 1. `helm repo add presslabs https://presslabs.github.io/charts`
 1. `helm install presslabs/mysql-operator --name mysql-operator`
 
+### Load Backplane Service
+https://github.com/edgz-io/edgz-backend (in progress)
+
+### Baseline Functions (core functions to be installed in OpenFaaS)
+...
+
 ## Explore Service Mesh
 `istioctl dashboard kiali`
 
