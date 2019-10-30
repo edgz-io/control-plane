@@ -11,11 +11,6 @@ After running the below steps you will have:
 1. Asset server (minio.io, minio namespace)
 1. All other namespaces - relagated to functions in OpenFaaS + Assets
 
-#### TODO
-- [ ] Fully script local
-- [ ] Full helm chart for all in one production
-- [ ] Move in service for schemaless
-
 ## Local Setup
 
 ### Install minikube & setup hypervisor
@@ -64,15 +59,6 @@ Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/REA
 ### Install MySQL Cluster
 1. `helm repo add presslabs https://presslabs.github.io/charts`
 1. `helm install presslabs/mysql-operator --name mysql-operator`
-
-
-### Load Backplane Service
-https://github.com/edgz-io/edgz-backend (in progress)
-
-
-### Baseline Functions (core functions to be installed in OpenFaaS)
-...
-
 
 ## Explore Service Mesh
 `istioctl dashboard kiali`
