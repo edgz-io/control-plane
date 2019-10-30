@@ -73,6 +73,7 @@ Reference: https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/REA
 `http://127.0.0.1:31112/ui/`
 
 ## Add MySQL Cluster
+Note, the password below is meant to show the base64 encoding is used so no special characters cause an issue in the script not for added security.  You should be sure to modify it for your use.
 ```
 Cluster.yaml
 
